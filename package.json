@@ -8,8 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^9.8.4",
+    "heroicons": "^0.3.6",
     "next": "9.4.4",
+    "next-svgr": "0.0.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.9.5"
   }
 }
