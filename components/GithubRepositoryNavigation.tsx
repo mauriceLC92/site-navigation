@@ -14,7 +14,7 @@ import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
 import Link from 'next/link';
 export const GithubRepoNavigation = () => {
     return (
-        <div className="bg-gray-200 space-y-4 px-4">
+        <div className="bg-gray-200 space-y-6 px-4">
             <div className="flex justify-between pt-4">
                 <div className="space-x-2 flex items-center">
                     <FolderIcon className=" h-5 w-5 text-gray-600" />

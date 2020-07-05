@@ -62,7 +62,6 @@ export const GithubNavBar = () => {
                     </button>
                 </div>
             </nav>
-            <nav>{/* Bottom nav */}</nav>
         </header>
     );
 };
