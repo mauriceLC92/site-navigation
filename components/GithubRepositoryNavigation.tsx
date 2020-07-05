@@ -12,6 +12,7 @@ import PlayIcon from 'heroicons/outline/play.svg';
 import SupportIcon from 'heroicons/outline/support.svg';
 import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
 import Link from 'next/link';
+
 export const GithubRepoNavigation = () => {
     return (
         <div className="bg-gray-200 space-y-6 px-4">
@@ -68,55 +69,61 @@ export const GithubRepoNavigation = () => {
                         Code{' '}
                     </a>
                 </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <ExclamationCircleIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Issues{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <SupportIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Pull requests{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <PlayIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Actions{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <TemplateIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Projects{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <BookOpenIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Wiki{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <ShieldCheckIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Security{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <ChartBarIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Insights{' '}
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                        <CogIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Settings{' '}
-                    </a>
-                </Link>
+                <RepositoryNavigation navItems={navigationItems} />
             </nav>
         </div>
     );
+};
+
+interface NavItem {
+    navItemName: string;
+    icon: React.ReactElement;
+}
+
+const navigationItems: NavItem[] = [
+    {
+        navItemName: 'Issues',
+        icon: <ExclamationCircleIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Pull requests',
+        icon: <SupportIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Actions',
+        icon: <PlayIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Projects',
+        icon: <TemplateIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Wiki',
+        icon: <BookOpenIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Security',
+        icon: <ShieldCheckIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Insights',
+        icon: <ChartBarIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+    {
+        navItemName: 'Insights',
+        icon: <CogIcon className="h-4 w-4 text-gray-600 mr-2" />,
+    },
+];
+
+const RepositoryNavigation = ({ navItems }) => {
+    return navItems.map((item: NavItem) => {
+        return (
+            <Link key={item.navItemName} href="#">
+                <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
+                    {item.icon}
+                    {item.navItemName}{' '}
+                </a>
+            </Link>
+        );
+    });
 };
