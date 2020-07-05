@@ -8,7 +8,7 @@ import DotsHorizontalIcon from 'heroicons/solid/dots-horizontal.svg';
 export const Vercel = () => {
     return (
         <div className="bg-white">
-            <header className=" space-y-2">
+            <header className="space-y-2">
                 <nav className="max-w-5xl mx-auto pt-5 flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                         <Link href="3">

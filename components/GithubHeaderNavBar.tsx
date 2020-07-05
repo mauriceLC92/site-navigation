@@ -23,7 +23,7 @@ export const GithubNavBar = () => {
                         />
                     </form>
                     <div className="flex justify-between">
-                        <div className="space-x-3">
+                        <div className="space-x-4">
                             <Link href="#">
                                 <a className=" text-base font-bold leading-5 text-gray-100 hover:text-gray-500 transition ease-in-out duration-100">
                                     Pull requests
