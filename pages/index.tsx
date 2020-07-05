@@ -1,35 +1,9 @@
 import SelectorIcon from 'heroicons/solid/selector.svg';
 import DotsHorizontalIcon from 'heroicons/solid/dots-horizontal.svg';
 import Link from 'next/link';
+import { VercelLogo } from '../components/VercelLogo';
+import { Avatar } from '../components/Avatar';
 
-const VercelLogo = ({ className }) => {
-    return (
-        <svg
-            className={className}
-            width="116"
-            height="100"
-            viewBox="0 0 116 100"
-            fill="#000"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M57.5 0L115 100H0L57.5 0z"
-            />
-        </svg>
-    );
-};
-
-const Avatar = ({ src, alt = '' }) => {
-    return (
-        <img
-            className="h-8 w-8 rounded-full border border-gray-200"
-            src={src}
-            alt={alt}
-        />
-    );
-};
 export default function Home() {
     return (
         <div>
