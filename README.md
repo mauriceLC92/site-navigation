@@ -2,6 +2,8 @@
 
 This is an ongoing project where headers and navigations will be built. As I go components will be abstracted and used in place of the repitition. The end goal is to have as much interactivity with each component as possible.
 
+View them here: https://site-navigation.vercel.app/
+
 ## Tech
 
 -   This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
