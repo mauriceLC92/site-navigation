@@ -12,6 +12,7 @@ import PlayIcon from 'heroicons/outline/play.svg';
 import SupportIcon from 'heroicons/outline/support.svg';
 import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
 import Link from 'next/link';
+import { useState, FC } from 'react';
 
 export const GithubRepoNavigation = () => {
     return (
@@ -63,13 +64,16 @@ export const GithubRepoNavigation = () => {
             </div>
 
             <nav className="flex items-center">
-                <Link href="#">
-                    <a className="py-4 px-4 border-b-2 border-red-700 flex items-center">
-                        <CodeIcon className="h-4 w-4 text-gray-600 mr-2" />
-                        Code{' '}
-                    </a>
-                </Link>
-                <RepositoryNavigation navItems={navigationItems} />
+                {navigationItems.map((item, index) => {
+                    return (
+                        <RepositoryNavigation
+                            key={`${item.href}_${index}`}
+                            href={item.href}
+                            icon={item.icon}
+                            navItemName={item.navItemName}
+                        />
+                    );
+                })}
             </nav>
         </div>
     );
@@ -78,52 +82,74 @@ export const GithubRepoNavigation = () => {
 interface NavItem {
     navItemName: string;
     icon: React.ReactElement;
+    href: string;
 }
 
 const navigationItems: NavItem[] = [
     {
+        navItemName: 'Code',
+        icon: <CodeIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'code',
+    },
+    {
         navItemName: 'Issues',
         icon: <ExclamationCircleIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'issues',
     },
     {
         navItemName: 'Pull requests',
         icon: <SupportIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'pull-requests',
     },
     {
         navItemName: 'Actions',
         icon: <PlayIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'actions',
     },
     {
         navItemName: 'Projects',
         icon: <TemplateIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'projects',
     },
     {
         navItemName: 'Wiki',
         icon: <BookOpenIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'wiki',
     },
     {
         navItemName: 'Security',
         icon: <ShieldCheckIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'security',
     },
     {
         navItemName: 'Insights',
         icon: <ChartBarIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'insights',
     },
     {
-        navItemName: 'Insights',
+        navItemName: 'Settings',
         icon: <CogIcon className="h-4 w-4 text-gray-600 mr-2" />,
+        href: 'settings',
     },
 ];
 
-const RepositoryNavigation = ({ navItems }) => {
-    return navItems.map((item: NavItem) => {
-        return (
-            <Link key={item.navItemName} href="#">
-                <a className="py-4 px-4 border-b-2 flex items-center hover:border-gray-400">
-                    {item.icon}
-                    {item.navItemName}{' '}
-                </a>
-            </Link>
-        );
-    });
+const RepositoryNavigation: FC<NavItem> = ({ icon, href, navItemName }) => {
+    const [isClicked, setIsClicked] = useState(false);
+    const selected = () => setIsClicked(!isClicked);
+
+    return (
+        <Link href={`#${href}`}>
+            <a
+                onClick={selected}
+                className={`${
+                    isClicked
+                        ? `py-4 px-4 border-b-2 border-red-700 flex items-center`
+                        : `py-4 px-4 border-b-2 flex items-center hover:border-gray-400`
+                }`}
+            >
+                {icon}
+                {navItemName}{' '}
+            </a>
+        </Link>
+    );
 };
