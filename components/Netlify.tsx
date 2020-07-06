@@ -1,6 +1,5 @@
 import ChevronDown from 'heroicons/solid/chevron-down.svg';
 import SupportIcon from 'heroicons/outline/support.svg';
-import Plus from 'heroicons/solid/plus.svg';
 import { Avatar } from './Avatar';
 import Link from 'next/link';
 
@@ -42,7 +41,7 @@ export const NetLify = () => {
                     ].map((navItem) => {
                         return (
                             <Link key={navItem} href="#">
-                                <a className="text-xl text-gray-600 hover:text-gray-300">
+                                <a className="text-xl text-gray-600 hover:text-gray-100 transition ease-in-out duration-150">
                                     {navItem}
                                 </a>
                             </Link>
