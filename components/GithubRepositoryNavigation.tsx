@@ -13,6 +13,7 @@ import SupportIcon from 'heroicons/outline/support.svg';
 import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
 import Link from 'next/link';
 import { useState, FC } from 'react';
+import { useRouter } from 'next/router';
 
 export const GithubRepoNavigation = () => {
     return (
@@ -66,7 +67,7 @@ export const GithubRepoNavigation = () => {
             <nav className="flex items-center">
                 {navigationItems.map((item, index) => {
                     return (
-                        <RepositoryNavigation
+                        <RepositoryNavigationItem
                             key={`${item.href}_${index}`}
                             href={item.href}
                             icon={item.icon}
@@ -133,7 +134,7 @@ const navigationItems: NavItem[] = [
     },
 ];
 
-const RepositoryNavigation: FC<NavItem> = ({ icon, href, navItemName }) => {
+const RepositoryNavigationItem: FC<NavItem> = ({ icon, href, navItemName }) => {
     const [isClicked, setIsClicked] = useState(false);
     const selected = () => setIsClicked(!isClicked);
 

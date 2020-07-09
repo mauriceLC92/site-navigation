@@ -1,6 +1,7 @@
 import { Vercel } from '../components/Vercel';
 import { Github } from '../components/Github';
 import { NetLify } from '../components/Netlify';
+import { WashingtonPost } from '../components/WashingtonPost';
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
             <Vercel />
             <Github />
             <NetLify />
+            <WashingtonPost />
         </div>
     );
 }
