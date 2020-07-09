@@ -17,7 +17,7 @@ export const WashingtonPostLogo = ({ className }) => {
             <title id="masthead_svg_title">The Washington Post</title>{' '}
             <g id="twp_x5F_full">
                 {' '}
-                <g enable-background="new ">
+                <g enableBackground="new ">
                     {' '}
                     <path
                         fill="#231F20"

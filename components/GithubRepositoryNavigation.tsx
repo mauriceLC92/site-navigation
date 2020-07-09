@@ -2,20 +2,25 @@ import FolderIcon from 'heroicons/outline/folder.svg';
 import EyeIcon from 'heroicons/outline/eye.svg';
 import StarIcon from 'heroicons/outline/star.svg';
 import ShareIcon from 'heroicons/outline/share.svg';
-import CodeIcon from 'heroicons/outline/code.svg';
-import CogIcon from 'heroicons/outline/cog.svg';
-import ChartBarIcon from 'heroicons/outline/chart-bar.svg';
-import TemplateIcon from 'heroicons/outline/template.svg';
-import ShieldCheckIcon from 'heroicons/outline/shield-check.svg';
-import BookOpenIcon from 'heroicons/outline/book-open.svg';
-import PlayIcon from 'heroicons/outline/play.svg';
-import SupportIcon from 'heroicons/outline/support.svg';
-import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
 import Link from 'next/link';
 import { useState, FC } from 'react';
-import { useRouter } from 'next/router';
+import { NavItem } from './Github';
 
-export const GithubRepoNavigation = () => {
+export const GithubRepoNavigation = (params: {
+    navigationItems: NavItem[];
+}) => {
+    const { navigationItems } = params;
+    const [navItems, setNavItems] = useState(navigationItems);
+
+    const handleSelectedNavItem = (navItemName) => {
+        const updatedNavigationItems = navItems.map((currentNavItem) => {
+            return currentNavItem.navItemName === navItemName
+                ? { ...currentNavItem, clicked: true }
+                : { ...currentNavItem, clicked: false };
+        });
+        setNavItems(updatedNavigationItems);
+    };
+
     return (
         <div className="bg-gray-200 space-y-6 px-4">
             <div className="flex justify-between pt-4">
@@ -65,13 +70,15 @@ export const GithubRepoNavigation = () => {
             </div>
 
             <nav className="flex items-center">
-                {navigationItems.map((item, index) => {
+                {navItems.map((item, index) => {
                     return (
                         <RepositoryNavigationItem
                             key={`${item.href}_${index}`}
                             href={item.href}
                             icon={item.icon}
                             navItemName={item.navItemName}
+                            clicked={item.clicked}
+                            handleSelectedNavItem={handleSelectedNavItem}
                         />
                     );
                 })}
@@ -80,70 +87,19 @@ export const GithubRepoNavigation = () => {
     );
 };
 
-interface NavItem {
-    navItemName: string;
-    icon: React.ReactElement;
-    href: string;
-}
-
-const navigationItems: NavItem[] = [
-    {
-        navItemName: 'Code',
-        icon: <CodeIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'code',
-    },
-    {
-        navItemName: 'Issues',
-        icon: <ExclamationCircleIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'issues',
-    },
-    {
-        navItemName: 'Pull requests',
-        icon: <SupportIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'pull-requests',
-    },
-    {
-        navItemName: 'Actions',
-        icon: <PlayIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'actions',
-    },
-    {
-        navItemName: 'Projects',
-        icon: <TemplateIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'projects',
-    },
-    {
-        navItemName: 'Wiki',
-        icon: <BookOpenIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'wiki',
-    },
-    {
-        navItemName: 'Security',
-        icon: <ShieldCheckIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'security',
-    },
-    {
-        navItemName: 'Insights',
-        icon: <ChartBarIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'insights',
-    },
-    {
-        navItemName: 'Settings',
-        icon: <CogIcon className="h-4 w-4 text-gray-600 mr-2" />,
-        href: 'settings',
-    },
-];
-
-const RepositoryNavigationItem: FC<NavItem> = ({ icon, href, navItemName }) => {
-    const [isClicked, setIsClicked] = useState(false);
-    const selected = () => setIsClicked(!isClicked);
-
+const RepositoryNavigationItem: FC<NavItem> = ({
+    icon,
+    href,
+    navItemName,
+    clicked,
+    handleSelectedNavItem,
+}) => {
     return (
         <Link href={`#${href}`}>
             <a
-                onClick={selected}
+                onClick={() => handleSelectedNavItem(navItemName)}
                 className={`${
-                    isClicked
+                    clicked
                         ? `py-4 px-4 border-b-2 border-red-700 flex items-center`
                         : `py-4 px-4 border-b-2 flex items-center hover:border-gray-400`
                 }`}
