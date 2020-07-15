@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nivo/calendar": "^0.62.0",
     "autoprefixer": "^9.8.4",
     "heroicons": "^0.3.6",
     "next": "9.4.4",
