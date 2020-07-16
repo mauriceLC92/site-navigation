@@ -154,7 +154,10 @@ const Auth0 = () => {
 
                         <div className="pb-5 flex justify-around border-b border-solid border-gray-300 ">
                             {statCardData.map((card) => (
-                                <div className="flex flex-col items-center">
+                                <div
+                                    key={card.name}
+                                    className="flex flex-col items-center"
+                                >
                                     <div>{card.name}</div>
                                     <div className="text-gray-700 text-3xl">
                                         {card.value}
@@ -167,7 +170,10 @@ const Auth0 = () => {
                         </div>
                         <div className="flex space-x-4">
                             {activityData.map((activity) => (
-                                <div className="mt-2 w-2/4">
+                                <div
+                                    key={activity.heading}
+                                    className="mt-2 w-2/4"
+                                >
                                     <div className="border-b border-solid border-gray-400">
                                         <div>
                                             <div className="pb-1">
