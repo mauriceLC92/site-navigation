@@ -6,6 +6,10 @@ import { Auth0 } from '../components/Auth0';
 import { useState } from 'react';
 import Select from 'react-select';
 
+interface IOption {
+    value: JSX.Element;
+    label: string;
+}
 const options = [
     { value: <Auth0 />, label: 'Auth0' },
     { value: <WashingtonPost />, label: 'Washington Post' },
@@ -17,7 +21,6 @@ const options = [
 export default function Home() {
     const [page, setPage] = useState({ value: <Auth0 />, label: 'Auth0' });
     const handlePageChange = (option) => {
-        console.log(option);
         setPage(option);
     };
     return (
@@ -26,7 +29,7 @@ export default function Home() {
                 <Select
                     className="w-64"
                     value={page}
-                    onChange={(option) => handlePageChange(option)}
+                    onChange={(option: IOption) => handlePageChange(option)}
                     options={options}
                     option={page.label}
                 />

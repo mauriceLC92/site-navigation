@@ -59,13 +59,22 @@ export const WashingtonPost = () => {
                     <WashingtonPostLogo className={'mt-4'} />
                 </div>
 
-                <div className="flex mt-2 items-center w-2/3 mx-auto justify-between border-b-2 border-solid border-black pb-4">
-                    <div>July 9, 2020</div>
-                    <div>Democracy Dies in Darkness</div>
-                    <div>Edition: US & World | Regional </div>
+                <div className="flex mt-2 items-center w-2/3 mx-auto justify-between border-b-2 border-solid border-black pb-1">
+                    <div className="font-bold" style={{ fontSize: '12px' }}>
+                        July 9, 2020
+                    </div>
+                    <div className="font-serif italic text-base">
+                        Democracy Dies in Darkness
+                    </div>
+                    <ul className="inline-flex" style={{ fontSize: '12px' }}>
+                        <li className="pr-1">Edition:</li>
+                        <li className="underline pr-1">US & World</li>
+                        <li className="pr-1">|</li>
+                        <li>Regional</li>
+                    </ul>
                 </div>
 
-                <nav className="flex w-2/3 items-center mx-auto mt-2 space-x-2 pb-2 border-b-2 border-solid border-gray-500">
+                <nav className="flex w-2/3 items-center mx-auto mt-2 space-x-2 pb-2 border-b-2 border-solid border-gray-300">
                     <Link href="#">
                         <a className="text-red-600">Kanye West</a>
                     </Link>
