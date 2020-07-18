@@ -7,6 +7,11 @@ export default function App({ Component, pageProps }) {
         <>
             <Head>
                 <link rel="stylesheet" href="https://rsms.me/inter.inter.css" />
+                <script
+                    async
+                    defer
+                    src="https://buttons.github.io/buttons.js"
+                ></script>
             </Head>
 
             <Component {...pageProps} />

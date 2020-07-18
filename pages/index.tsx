@@ -5,6 +5,7 @@ import { WashingtonPost } from '../components/WashingtonPost';
 import { Auth0 } from '../components/Auth0';
 import { useState } from 'react';
 import Select from 'react-select';
+import { GithubStar } from '../components/GithubStar';
 
 interface IOption {
     value: JSX.Element;
@@ -25,7 +26,8 @@ export default function Home() {
     };
     return (
         <div className="flex flex-col justify-between bg-white space-y-2 mt-2">
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center space-x-2">
+                <GithubStar />
                 <Select
                     className="w-64"
                     value={page}
