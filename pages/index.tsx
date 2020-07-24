@@ -1,4 +1,4 @@
-import { Vercel } from '../components/Vercel';
+import { Vercel } from '../components/Vercel/Vercel';
 import { Github } from '../components/Github';
 import { NetLify } from '../components/Netlify';
 import { WashingtonPost } from '../components/WashingtonPost';
