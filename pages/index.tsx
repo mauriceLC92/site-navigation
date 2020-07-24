@@ -14,10 +14,10 @@ interface IOption {
 }
 const options = [
     { value: <Auth0 />, label: 'Auth0' },
+    { value: <Vercel />, label: 'Vercel' },
     { value: <WashingtonPost />, label: 'Washington Post' },
     { value: <NetLify />, label: 'Netlify' },
     { value: <Github />, label: 'Github' },
-    { value: <Vercel />, label: 'Vercel' },
 ];
 
 export default function Home() {
