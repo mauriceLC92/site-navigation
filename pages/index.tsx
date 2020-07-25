@@ -16,9 +16,9 @@ interface IOption {
 const options = [
     { value: <Auth0 />, label: 'Auth0' },
     { value: <Vercel />, label: 'Vercel' },
+    { value: <Github />, label: 'Github' },
     { value: <WashingtonPost />, label: 'Washington Post' },
     { value: <NetLify />, label: 'Netlify' },
-    { value: <Github />, label: 'Github' },
 ];
 
 export default function Home() {
