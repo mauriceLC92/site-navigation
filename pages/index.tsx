@@ -1,5 +1,5 @@
 import { Vercel } from '../components/Vercel/Vercel';
-import { Github } from '../components/Github';
+import { Github } from '../components/Github/Github';
 import { NetLify } from '../components/Netlify';
 import { WashingtonPost } from '../components/WashingtonPost';
 import { Auth0 } from '../components/Auth0';
@@ -12,6 +12,7 @@ interface IOption {
     value: JSX.Element;
     label: string;
 }
+
 const options = [
     { value: <Auth0 />, label: 'Auth0' },
     { value: <Vercel />, label: 'Vercel' },

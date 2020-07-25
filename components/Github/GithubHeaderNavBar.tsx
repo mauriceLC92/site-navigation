@@ -3,7 +3,7 @@ import SpeakerphoneIcon from 'heroicons/outline/speakerphone.svg';
 import Plus from 'heroicons/solid/plus.svg';
 import ChevronDown from 'heroicons/solid/chevron-down.svg';
 import Link from 'next/link';
-import { Avatar } from './Avatar';
+import { Avatar } from '../Avatar';
 
 export const GithubNavBar = () => {
     return (

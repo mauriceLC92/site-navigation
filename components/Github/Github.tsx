@@ -9,12 +9,14 @@ import BookOpenIcon from 'heroicons/outline/book-open.svg';
 import PlayIcon from 'heroicons/outline/play.svg';
 import SupportIcon from 'heroicons/outline/support.svg';
 import ExclamationCircleIcon from 'heroicons/outline/exclamation-circle.svg';
+import { GitHubRepositoryCode } from './GithubRepositoryCode';
 
 export const Github = () => {
     return (
         <div>
             <GithubNavBar />
             <GithubRepoNavigation navigationItems={navigationItems} />
+            <GitHubRepositoryCode />
         </div>
     );
 };
