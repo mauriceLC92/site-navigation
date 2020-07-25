@@ -14,7 +14,7 @@ export const GitHubRepositoryCode = () => {
                         About
                     </div>
                     <button className="text-gray-900 text-xl">
-                        <CogIcon className="h-5 w-5 text-gray-700 mr-2" />
+                        <CogIcon className="h-5 w-5 text-gray-700" />
                     </button>
                 </div>
 
