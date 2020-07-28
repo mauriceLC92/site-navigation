@@ -30,7 +30,7 @@ export const Vercel = () => {
                             <Link href="#">
                                 <a className="inline-flex items-center space-x-2">
                                     <span>
-                                        <Avatar src="https://vercel.com/api/www/avatar/a02d01e7cce8f0578f5105d0d434b332a47fd9b7?s=204" />
+                                        <Avatar src="https://pbs.twimg.com/profile_images/780489174008885248/g9ZDoWai_400x400.jpg" />
                                     </span>
                                     <span>Maurice Le Cordier</span>
                                 </a>
@@ -72,7 +72,7 @@ export const Vercel = () => {
                             </button>
 
                             <button>
-                                <Avatar src="https://vercel.com/api/www/avatar/a02d01e7cce8f0578f5105d0d434b332a47fd9b7?s=204" />
+                                <Avatar src="https://pbs.twimg.com/profile_images/780489174008885248/g9ZDoWai_400x400.jpg" />
                             </button>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export const Vercel = () => {
                     <div>
                         <img
                             className="h-24 w-24 rounded-full"
-                            src="https://vercel.com/api/www/avatar/a02d01e7cce8f0578f5105d0d434b332a47fd9b7?s=204"
+                            src="https://pbs.twimg.com/profile_images/780489174008885248/g9ZDoWai_400x400.jpg"
                         />
                     </div>
                     <div className="flex flex-col justify-between space-y-4">
